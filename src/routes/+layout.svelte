@@ -17,7 +17,7 @@
 </svelte:head>
 
 <header class="site-header">
-	<h1>Craig Fox 🛠 tooling</h1>
+	<h1>🔨 BearBones tooling</h1>
 </header>
 
 <main id="maincontent">
