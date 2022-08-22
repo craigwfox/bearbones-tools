@@ -1,17 +1,17 @@
 <script>
 	import { helpers } from '$lib/helpers';
-	export let baseSize;
+	export let fontBase;
 
 	$: pixVal = 16;
 	$: remVal = 1;
 
-	function remUpdate(val) {
-		remVal = helpers.convertPixToRem(baseSize, val);
-	}
+	$: remUpdate = function (val) {
+		remVal = helpers.pixToRem(fontBase, val);
+	};
 
-	function pixelUpdate(val) {
-		pixVal = helpers.convertRemToPix(baseSize, val);
-	}
+	$: pixelUpdate = function (val) {
+		pixVal = helpers.remToPix(fontBase, val);
+	};
 </script>
 
 <section id="pxtorem" aria-labelledby="title-pxtorem">

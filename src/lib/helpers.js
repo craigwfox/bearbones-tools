@@ -1,8 +1,8 @@
 export const helpers = {
-	convertPixToRem(base, val) {
+	pixToRem(base, val) {
 		return val / base;
 	},
-	convertRemToPix(base, val) {
+	remToPix(base, val) {
 		return val * base;
 	}
 };

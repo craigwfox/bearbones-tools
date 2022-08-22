@@ -12,22 +12,21 @@
 	<div class="input-group">
 		<div class="input">
 			<label for="sizeBase">Base size</label>
-			<input type="text" id="sizeBase" bind:value={fsBase} />
+			<input type="number" id="sizeBase" bind:value={fsBase} />
 		</div>
 		<div class="input">
 			<label for="minWidth">Min window width</label>
-			<input type="text" id="minWidth" bind:value={minWidth} />
+			<input type="number" id="minWidth" bind:value={minWidth} />
 		</div>
 		<div class="input">
 			<label for="maxWidth">Max window width</label>
-			<input type="text" id="maxWidth" bind:value={maxWidth} />
+			<input type="number" id="maxWidth" bind:value={maxWidth} />
 		</div>
 	</div>
 </fieldset>
 
 <div class="tools">
-	<PxToRem baseSize={fsBase} />
-	<div>Color picker place holder</div>
+	<PxToRem fontBase={fsBase} />
 	<ClampGenerator fontBase={fsBase} minWin={minWidth} maxWin={maxWidth} />
 </div>
 
@@ -92,13 +91,8 @@
 	}
 
 	.tools {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		gap: var(--sp-sm);
-
-		#clampgenerator {
-			flex-basis: 100%;
-		}
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(15rem, auto));
+		gap: var(--sp-lg) var(--sp-sm);
 	}
 </style>
