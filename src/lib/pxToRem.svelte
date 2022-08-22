@@ -1,15 +1,16 @@
 <script>
+	import { helpers } from '$lib/helpers';
 	export let baseSize;
 
 	$: pixVal = 16;
 	$: remVal = 1;
 
-	function convertPixToRem(val) {
-		remVal = val / baseSize;
+	function remUpdate(val) {
+		remVal = helpers.convertPixToRem(baseSize, val);
 	}
 
-	function convertRemToPix(val) {
-		pixVal = val * baseSize;
+	function pixelUpdate(val) {
+		pixVal = helpers.convertRemToPix(baseSize, val);
 	}
 </script>
 
@@ -25,7 +26,7 @@
 						id="pixels"
 						bind:value={pixVal}
 						on:keyup={(e) => {
-							convertPixToRem(e.target.value);
+							remUpdate(e.target.value);
 						}}
 					/>
 				</div>
@@ -37,7 +38,7 @@
 						id="rems"
 						bind:value={remVal}
 						on:keyup={(e) => {
-							convertRemToPix(e.target.value);
+							pixelUpdate(e.target.value);
 						}}
 					/>
 				</div>
