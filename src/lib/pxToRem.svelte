@@ -5,13 +5,13 @@
 	$: pixVal = 16;
 	$: remVal = 1;
 
-	$: remUpdate = function (val) {
-		remVal = helpers.pixToRem(fontBase, val);
-	};
+	function remUpdate(val) {
+		remVal = parseFloat(helpers.pixToRem(fontBase, val).toFixed(3));
+	}
 
-	$: pixelUpdate = function (val) {
-		pixVal = helpers.remToPix(fontBase, val);
-	};
+	function pixelUpdate(val) {
+		pixVal = parseFloat(helpers.remToPix(fontBase, val).toFixed(3));
+	}
 </script>
 
 <section id="pxtorem" aria-labelledby="title-pxtorem">
@@ -25,6 +25,9 @@
 						type="number"
 						id="pixels"
 						bind:value={pixVal}
+						on:change={(e) => {
+							remUpdate(e.target.value);
+						}}
 						on:keyup={(e) => {
 							remUpdate(e.target.value);
 						}}
@@ -37,6 +40,9 @@
 						type="number"
 						id="rems"
 						bind:value={remVal}
+						on:change={(e) => {
+							pixelUpdate(e.target.value);
+						}}
 						on:keyup={(e) => {
 							pixelUpdate(e.target.value);
 						}}

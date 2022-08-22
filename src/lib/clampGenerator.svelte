@@ -7,13 +7,11 @@
 
 	$: minValue = 16;
 	$: maxValue = 24;
-	$: minView = minWin;
-	$: maxView = maxWin;
 	$: clampValue = setTimeout(() => generateClamp());
 
 	$: generateClamp = function () {
-		const variablePart = (maxValue - minValue) / (maxView - minView);
-		const constant = parseFloat(((maxValue - maxView * variablePart) / 16).toFixed(3));
+		const variablePart = (maxValue - minValue) / (maxWin - minWin);
+		const constant = parseFloat(((maxValue - maxWin * variablePart) / 16).toFixed(3));
 
 		clampValue = `clamp(
 				${parseFloat(helpers.pixToRem(fontBase, minValue).toFixed(3))}rem,

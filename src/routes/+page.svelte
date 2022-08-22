@@ -27,6 +27,7 @@
 
 <div class="tools">
 	<PxToRem fontBase={fsBase} />
+	<div>Color picker</div>
 	<ClampGenerator fontBase={fsBase} minWin={minWidth} maxWin={maxWidth} />
 </div>
 
@@ -94,5 +95,9 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(15rem, auto));
 		gap: var(--sp-lg) var(--sp-sm);
+	}
+
+	#clampgenerator {
+		grid-column: 1 / -1;
 	}
 </style>

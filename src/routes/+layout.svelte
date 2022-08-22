@@ -31,6 +31,6 @@
 		&copy; {new Date().getFullYear()}
 		<a href="https://craigwfox.com">Craig Fox</a>
 		<img src="/images/fox-icon.svg" alt="Illustration of fox head" />
-		Built using SvelteKit
+		// Built using SvelteKit
 	</p>
 </footer>
