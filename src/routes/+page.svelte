@@ -1,5 +1,6 @@
 <script>
 	import ClampGenerator from '../lib/clampGenerator.svelte';
+	import ColorPicker from '../lib/colorPicker.svelte';
 	import PxToRem from '../lib/pxToRem.svelte';
 
 	$: fsBase = 16;
@@ -27,7 +28,7 @@
 
 <div class="tools">
 	<PxToRem fontBase={fsBase} />
-	<div>Color picker</div>
+	<ColorPicker />
 	<ClampGenerator fontBase={fsBase} minWin={minWidth} maxWin={maxWidth} />
 </div>
 
