@@ -72,11 +72,11 @@
 
 			padding-inline: 0.5rem;
 
-			border: 0;
+			border: 0.2rem solid hsl(var(--clr-bg-alt));
 
 			color: hsl(var(--clr-bg-alt));
 
-			&:focus {
+			&:invalid {
 				border-color: hsl(var(--clr-main));
 			}
 
