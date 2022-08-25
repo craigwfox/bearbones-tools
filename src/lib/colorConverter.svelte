@@ -218,4 +218,9 @@
 
 		transition: all 0.2s ease-in-out;
 	}
+
+	.input-group {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
 </style>

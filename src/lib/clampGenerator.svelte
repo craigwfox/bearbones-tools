@@ -21,32 +21,30 @@
 </script>
 
 <section id="clampgenerator" aria-labelledby="title-clamp">
-	<form>
-		<fieldset>
-			<legend id="title-clamp">Generate Clamp</legend>
-			<div class="input-group">
-				<div class="input">
-					<label for="pixelsMin">Min <small>(px)</small></label>
-					<input
-						type="number"
-						id="pixelsMin"
-						bind:value={minValue}
-						on:keyup={() => generateClamp()}
-					/>
-				</div>
-				<div class="input">
-					<label for="pixelsMax">Max <small>(px)</small></label>
-					<input
-						type="number"
-						id="pixelsMax"
-						bind:value={maxValue}
-						on:keyup={() => generateClamp()}
-					/>
-				</div>
+	<fieldset>
+		<legend id="title-clamp">Generate Clamp</legend>
+		<div class="input-group">
+			<div class="input">
+				<label for="pixelsMin">Min <small>(px)</small></label>
+				<input
+					type="number"
+					id="pixelsMin"
+					bind:value={minValue}
+					on:keyup={() => generateClamp()}
+				/>
 			</div>
-			<code class="output">{clampValue}</code>
-		</fieldset>
-	</form>
+			<div class="input">
+				<label for="pixelsMax">Max <small>(px)</small></label>
+				<input
+					type="number"
+					id="pixelsMax"
+					bind:value={maxValue}
+					on:keyup={() => generateClamp()}
+				/>
+			</div>
+		</div>
+		<code class="output">{clampValue}</code>
+	</fieldset>
 </section>
 
 <style type="scss">

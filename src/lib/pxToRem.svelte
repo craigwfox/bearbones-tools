@@ -15,9 +15,9 @@
 </script>
 
 <section id="pxtorem" aria-labelledby="title-pxtorem">
-	<form on:submit|preventDefault={() => {}}>
-		<fieldset>
-			<legend id="title-pxtorem">Convert Pixels to Rems</legend>
+	<fieldset>
+		<legend id="title-pxtorem">Convert Pixels to Rems</legend>
+		<div>
 			<div class="input-group">
 				<div class="input">
 					<label for="pixels">Pixels</label>
@@ -37,7 +37,7 @@
 				<div class="input">
 					<label for="rems">Rems</label>
 					<input
-						type="number"
+						type="text"
 						id="rems"
 						bind:value={remVal}
 						on:change={(e) => {
@@ -49,16 +49,36 @@
 					/>
 				</div>
 			</div>
-		</fieldset>
-	</form>
+			<div class="exmaple" style="font-size: {pixVal}px">
+				<p>Example of text size</p>
+			</div>
+		</div>
+	</fieldset>
 </section>
 
 <style type="scss">
 	fieldset {
-		max-width: 25rem;
+		display: flex;
+	}
+	fieldset > div {
+		display: grid;
+		align-content: start;
+		justify-content: center;
+		grid-template-rows: auto 1fr;
 	}
 
 	.input-group {
 		grid-template-columns: 1fr auto 1fr;
+	}
+
+	.exmaple {
+		display: grid;
+		place-content: center;
+	}
+
+	p {
+		margin: 2rem 0 1.7rem;
+
+		font-size: 1em;
 	}
 </style>
