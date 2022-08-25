@@ -1,6 +1,6 @@
 <script>
 	import ClampGenerator from '../lib/clampGenerator.svelte';
-	import ColorPicker from '../lib/colorPicker.svelte';
+	import ColorConverter from '../lib/colorConverter.svelte';
 	import PxToRem from '../lib/pxToRem.svelte';
 
 	$: fsBase = 16;
@@ -28,7 +28,7 @@
 
 <div class="tools">
 	<PxToRem fontBase={fsBase} />
-	<ColorPicker />
+	<ColorConverter />
 	<ClampGenerator fontBase={fsBase} minWin={minWidth} maxWin={maxWidth} />
 </div>
 
@@ -72,11 +72,11 @@
 
 			padding-inline: 0.5rem;
 
-			border: 0;
+			border: 0.2rem solid hsl(var(--clr-bg-alt));
 
 			color: hsl(var(--clr-bg-alt));
 
-			&:focus {
+			&:invalid {
 				border-color: hsl(var(--clr-main));
 			}
 
@@ -93,12 +93,20 @@
 	}
 
 	.tools {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(15rem, auto));
-		gap: var(--sp-lg) var(--sp-sm);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: stretch;
+		gap: var(--sp-lg) var(--sp-lg);
 	}
 
+	#pxtorem {
+		flex: 1 1 25rem;
+	}
 	#clampgenerator {
-		grid-column: 1 / -1;
+		flex-basis: 100%;
+	}
+	#colorConverter {
+		width: 100%;
+		flex: 1 1 40rem;
 	}
 </style>
