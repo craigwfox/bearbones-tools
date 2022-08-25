@@ -8,35 +8,33 @@
 	$: maxWidth = 1200;
 </script>
 
-<fieldset class="controls">
-	<legend>Default values (in pixels)</legend>
-	<div class="input-group">
-		<div class="input">
-			<label for="sizeBase">Base size</label>
-			<input type="number" id="sizeBase" bind:value={fsBase} />
+<form on:submit|preventDefault={() => {}}>
+	<fieldset class="controls">
+		<legend>Default values (in pixels)</legend>
+		<div class="input-group">
+			<div class="input">
+				<label for="sizeBase">Base size</label>
+				<input type="number" id="sizeBase" bind:value={fsBase} />
+			</div>
+			<div class="input">
+				<label for="minWidth">Min window width</label>
+				<input type="number" id="minWidth" bind:value={minWidth} />
+			</div>
+			<div class="input">
+				<label for="maxWidth">Max window width</label>
+				<input type="number" id="maxWidth" bind:value={maxWidth} />
+			</div>
 		</div>
-		<div class="input">
-			<label for="minWidth">Min window width</label>
-			<input type="number" id="minWidth" bind:value={minWidth} />
-		</div>
-		<div class="input">
-			<label for="maxWidth">Max window width</label>
-			<input type="number" id="maxWidth" bind:value={maxWidth} />
-		</div>
-	</div>
-</fieldset>
+	</fieldset>
 
-<div class="tools">
-	<PxToRem fontBase={fsBase} />
-	<ColorConverter />
-	<ClampGenerator fontBase={fsBase} minWin={minWidth} maxWin={maxWidth} />
-</div>
+	<div class="tools">
+		<PxToRem fontBase={fsBase} />
+		<ColorConverter />
+		<ClampGenerator fontBase={fsBase} minWin={minWidth} maxWin={maxWidth} />
+	</div>
+</form>
 
 <style type="scss" global>
-	form {
-		height: 100%;
-	}
-
 	fieldset {
 		height: 100%;
 		border: 0.3rem solid hsl(var(--clr-alt-1));
@@ -93,20 +91,15 @@
 	}
 
 	.tools {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: stretch;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
 		gap: var(--sp-lg) var(--sp-lg);
 	}
 
 	#pxtorem {
-		flex: 1 1 25rem;
-	}
-	#clampgenerator {
-		flex-basis: 100%;
 	}
 	#colorConverter {
-		width: 100%;
-		flex: 1 1 40rem;
+	}
+	#clampgenerator {
 	}
 </style>
