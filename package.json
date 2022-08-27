@@ -7,11 +7,17 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"tauri": "tauri",
+		"beforeDevCommand": "npm run dev",
+		"beforeBuildCommand": "npm run build"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/adapter-static": "1.0.0-next.39",
 		"@sveltejs/kit": "next",
+		"@tauri-apps/api": "^1.0.2",
+		"@tauri-apps/cli": "^1.0.5",
 		"eslint": "^8.16.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^4.0.0",
