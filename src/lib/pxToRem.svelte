@@ -49,7 +49,7 @@
 					/>
 				</div>
 			</div>
-			<div class="exmaple" style="font-size: {pixVal}px">
+			<div class="exmaple" style="font-size: {pixVal > 100 ? 100 : pixVal}px">
 				<p>Example of text size</p>
 			</div>
 		</div>
