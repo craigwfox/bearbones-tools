@@ -10,10 +10,6 @@
 		href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Rubik:wght@400;700&display=swap"
 		rel="stylesheet"
 	/>
-	<script
-		defer
-		data-domain="tools.craigwfox.com"
-		src="https://plausible.io/js/plausible.js"></script>
 </svelte:head>
 
 <header class="site-header">
