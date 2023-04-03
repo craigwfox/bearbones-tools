@@ -13,10 +13,11 @@
 		const variablePart = (maxValue - minValue) / (maxWin - minWin);
 		const constant = parseFloat(((maxValue - maxWin * variablePart) / 16).toFixed(3));
 
-		clampValue = `clamp(
-				${parseFloat(helpers.pixToRem(fontBase, minValue).toFixed(3))}rem,
-				${constant}rem + ${parseFloat((100 * variablePart).toFixed(2))}vw,
-				${parseFloat(helpers.pixToRem(fontBase, maxValue).toFixed(3))}rem)`;
+		clampValue = `clamp(${parseFloat(
+			helpers.pixToRem(fontBase, minValue).toFixed(3)
+		)}rem, ${constant}rem + ${parseFloat((100 * variablePart).toFixed(2))}vw, ${parseFloat(
+			helpers.pixToRem(fontBase, maxValue).toFixed(3)
+		)}rem)`;
 	};
 </script>
 
