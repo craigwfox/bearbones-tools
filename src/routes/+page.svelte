@@ -34,7 +34,7 @@
 	</div>
 </form>
 
-<style type="scss" global>
+<style type="scss">
 	fieldset {
 		height: 100%;
 		border: 0.3rem solid hsl(var(--clr-alt-1));
@@ -55,35 +55,32 @@
 		gap: 0.5rem var(--sp-sm);
 	}
 
-	.input {
-		label {
-			display: block;
+	.input input {
+		width: 100%;
 
-			color: hsl(var(--clr-alt-1));
-			font-weight: 700;
+		display: block;
+
+		padding-inline: 0.5rem;
+
+		border: 0.2rem solid hsl(var(--clr-bg-alt));
+
+		color: hsl(var(--clr-bg-alt));
+
+		&:invalid {
+			border-color: hsl(var(--clr-main));
 		}
 
-		input {
-			width: 100%;
+		&:disabled {
+			background: hsl(0 0% 80%);
 
-			display: block;
-
-			padding-inline: 0.5rem;
-
-			border: 0.2rem solid hsl(var(--clr-bg-alt));
-
-			color: hsl(var(--clr-bg-alt));
-
-			&:invalid {
-				border-color: hsl(var(--clr-main));
-			}
-
-			&:disabled {
-				background: hsl(0 0% 80%);
-
-				color: hsl(var(--clr-bg-alt) / 0.7);
-			}
+			color: hsl(var(--clr-bg-alt) / 0.7);
 		}
+	}
+	.input label {
+		display: block;
+
+		color: hsl(var(--clr-alt-1));
+		font-weight: 700;
 	}
 
 	.controls {
@@ -94,12 +91,5 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
 		gap: var(--sp-lg) var(--sp-lg);
-	}
-
-	#pxtorem {
-	}
-	#colorConverter {
-	}
-	#clampgenerator {
 	}
 </style>
